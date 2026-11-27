@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #15152a;
+  --color-purple: #7252d6;
+  --color-lavender: #ece7ff;
+  --color-paper: #fbfaf7;
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "Manrope", sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: #fbfaf7; }
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+
+@keyframes testimonial-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+.reveal-ready [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s cubic-bezier(.16,1,.3,1); }
+.reveal-ready [data-reveal].is-visible { opacity: 1; transform: none; }
